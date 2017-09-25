@@ -7,6 +7,9 @@ fi
 
 #supervisor
 cat > /etc/supervisor/conf.d/supervisord.conf <<EOF
+[supervisord]
+nodaemon=true
+
 [program:dovecot]
 command=/usr/sbin/dovecot -c /etc/dovecot/dovecot.conf -F
 autorestart=true
